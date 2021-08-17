@@ -6,7 +6,7 @@
 /*   By: wrosendo <wrosendo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/17 16:32:48 by wrosendo          #+#    #+#             */
-/*   Updated: 2021/08/17 16:32:51 by wrosendo         ###   ########.fr       */
+/*   Updated: 2021/08/17 17:15:37 by wrosendo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,27 +16,24 @@ char	*ft_strdup(const char *s)
 {
 	size_t	len;
 	size_t	i;
-	char	*str;
+	char	*ret;
 
-	i = 0;
-	while (str[i] != '\0')
-		i++;
-	len = i;
 	i = 0;
 	while (s[i] != '\0')
 		i++;
-	str = malloc(i + 1);
-	if (str == 0)
+	len = i;
+	ret = (char *)malloc(sizeof(char) * (len + 1));
+	if (!ret)
 		return (NULL);
 	i = 0;
 	while (i < len)
 	{
-		str[i] = *str;
-		str++;
+		ret[i] = *s;
+		s++;
 		i++;
 	}
-	str[i] = '\0';
-	return (str);
+	ret[i] = '\0';
+	return (ret);
 }
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
