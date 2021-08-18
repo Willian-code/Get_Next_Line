@@ -6,68 +6,12 @@
 /*   By: wrosendo <wrosendo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/17 16:30:57 by wrosendo          #+#    #+#             */
-/*   Updated: 2021/08/17 16:35:40 by wrosendo         ###   ########.fr       */
+/*   Updated: 2021/08/18 11:56:24 by wrosendo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line_bonus.h"
 
-/*
-char *get_next_line(int fd)
-{
-	int i;
-	static char *n;
-	int x,y;
-
-	i = 0;
-	char *buf = (char *)calloc(100 , sizeof(char));
-	y = read(fd, buf, BUFFER_SIZE);
-	printf("%d", y);
-	read(fd, buf, BUFFER_SIZE);
-	read(fd, buf, BUFFER_SIZE);
-	read(fd, buf, BUFFER_SIZE);
-	read(fd, buf, BUFFER_SIZE);
-	x = read(fd, buf, BUFFER_SIZE);
-	printf("%d", x);
-
-
-	////while (buf[i] != '\n')
-	////    i++;
-	////buf[i + 1] = '\0';
-
-	return ((char *)buf);
-}
-*/
-/*
-int main(int argc, char *argv[])
-{
-	int fd;
-	char *ptr;
-
-	fd = open(argv[1], O_RDONLY);
-
-	ptr = get_next_line(fd);
-
-	printf("%s", ptr);
-
-	return (0);
-}
-*/
-/*
-int main(int argc, char *argv[])
-{
-	int fd;
-	char *s;
-
-	fd = open(argv[1], O_RDONLY);
-
-	s = get_next_line(fd);
-
-	printf("%s", s);
-
-	return (0);
-}
-*/
 char	*trim(char **str)
 {
 	int		i;
@@ -98,7 +42,7 @@ char	*trim(char **str)
 
 char	*get_next_line(int fd)
 {
-	static char	*str_left;
+	static char	*str_left[FD_SIZE];
 	char		buff[BUFFER_SIZE + 1];
 	char		*temp;
 	ssize_t		n_bytes_rd;
@@ -110,43 +54,17 @@ char	*get_next_line(int fd)
 	while (n_bytes_rd > 0)
 	{
 		buff[n_bytes_rd] = '\0';
-		if (!str_left)
-			str_left = ft_strdup("");
-		temp = ft_strdup(str_left);
-		free(str_left);
-		str_left = ft_strjoin(temp, buff);
+		if (!str_left[fd])
+			str_left[fd] = ft_strdup("");
+		temp = ft_strdup(str_left[fd]);
+		free(str_left[fd]);
+		str_left[fd] = ft_strjoin(temp, buff);
 		free(temp);
-		if (ft_strchr(str_left, '\n'))
+		if (ft_strchr(str_left[fd], '\n'))
 			break ;
 		n_bytes_rd = read(fd, buff, BUFFER_SIZE);
 	}
-	if (n_bytes_rd < 0 || (n_bytes_rd == 0 && !str_left))
+	if (n_bytes_rd < 0 || (n_bytes_rd == 0 && !str_left[fd]))
 		return (NULL);
-	return (trim(&str_left));
+	return (trim(&str_left[fd]));
 }
-
-/*
-int main(int argc, char *argv[])
-{
-	int fd;
-	char *s;
-
-	fd = open(argv[1], O_RDONLY);
-	if (argc == 1)
-		fd = 0;
-
-	s = get_next_line(fd);
-	printf("%s", s);
-	free(s);
-	//while (s != NULL)
-	//{
-	//	s = get_next_line(fd);
-	//	printf("%s", s);
-	//	free(s);
-	//}
-	//printf("%d", fd);
-
-	return (0);
-}
-
-*/

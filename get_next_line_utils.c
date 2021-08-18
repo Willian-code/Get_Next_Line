@@ -6,11 +6,11 @@
 /*   By: wrosendo <wrosendo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/17 16:32:48 by wrosendo          #+#    #+#             */
-/*   Updated: 2021/08/17 17:15:37 by wrosendo         ###   ########.fr       */
+/*   Updated: 2021/08/17 20:19:54 by wrosendo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line_bonus.h"
+#include "get_next_line.h"
 
 char	*ft_strdup(const char *s)
 {

@@ -6,7 +6,7 @@
 /*   By: wrosendo <wrosendo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/17 16:31:11 by wrosendo          #+#    #+#             */
-/*   Updated: 2021/08/17 17:18:49 by wrosendo         ###   ########.fr       */
+/*   Updated: 2021/08/18 11:49:20 by wrosendo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,10 @@
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 1000
+# endif
+
+# ifndef FD_SIZE
+#  define FD_SIZE 1024
 # endif
 
 char	*get_next_line(int fd);
