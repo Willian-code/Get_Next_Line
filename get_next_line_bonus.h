@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: wrosendo <wrosendo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/17 16:31:11 by wrosendo          #+#    #+#             */
-/*   Updated: 2021/08/18 11:49:20 by wrosendo         ###   ########.fr       */
+/*   Created: 2021/09/10 14:44:13 by wrosendo          #+#    #+#             */
+/*   Updated: 2021/09/10 14:49:42 by wrosendo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 # endif
 
 # ifndef FD_SIZE
-#  define FD_SIZE 1024
+#  define FD_SIZE 256
 # endif
 
 char	*get_next_line(int fd);

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: wrosendo <wrosendo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/17 16:33:00 by wrosendo          #+#    #+#             */
-/*   Updated: 2021/08/18 11:55:43 by wrosendo         ###   ########.fr       */
+/*   Created: 2021/09/10 14:44:40 by wrosendo          #+#    #+#             */
+/*   Updated: 2021/09/10 14:49:31 by wrosendo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ char	*get_next_line(int fd)
 	ssize_t		n_bytes_rd;
 
 	n_bytes_rd = 0;
-	if (fd < 0 || fd > 1024 || BUFFER_SIZE < 1)
+	if (fd < 0 || fd > 256 || BUFFER_SIZE < 1)
 		return (NULL);
 	n_bytes_rd = read(fd, buff, BUFFER_SIZE);
 	while (n_bytes_rd > 0)
