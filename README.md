@@ -5,7 +5,7 @@ Function should let you read the text file pointed to by the file descriptor, on
 ## 📥 Installation
 
 ```bash
-git clone 
+git clone https://github.com/willianlim/get_next_line
 ```
 
 ## ✍ Usage
