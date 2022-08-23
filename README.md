@@ -23,6 +23,34 @@ foobar.pluralize('goose')
 foobar.singularize('phenomena')
 ```
 
+```C
+/*
+	Example of main file for teste
+*/
+
+#include <stdio.h>
+#include <fcntl.h>
+#include "get_next_line.h"
+
+int main(void)
+{
+	int		fd;
+	char	*line;
+
+	fd = open("file_teste.txt", O_RDONLY);
+	while(1)
+	{
+		line = get_next_line(fd);
+		if (!line)
+			break ;
+		printf("%s", line);
+		free(line);
+	}
+	return (0);
+}
+
+```
+
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
