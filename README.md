@@ -1,6 +1,6 @@
 # [`GNL`](https://github.com/willianlim/get_next_line/blob/main/pdf/en.subject.pdf)
 
-Foobar is a Python library for dealing with word pluralization.
+Function should let you read the text file pointed to by the file descriptor, one line at a time.
 
 ## Installation
 
