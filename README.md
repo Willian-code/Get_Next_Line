@@ -2,15 +2,13 @@
 
 Function should let you read the text file pointed to by the file descriptor, one line at a time.
 
-## Installation
-
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
+## 📥 Installation
 
 ```bash
-pip install foobar
+git clone 
 ```
 
-## Usage
+## ✍ Usage
 
 ```python
 import foobar
